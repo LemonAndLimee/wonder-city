@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundBorders : MonoBehaviour
+public class SpecificRoadLogic : MonoBehaviour
 {
-    public string edgeType;
+    public bool isHighwayConnected;
 
     // Start is called before the first frame update
     void Start()
     {
-        //DONT DELETE THIS SCRIPT LOOK UP THERES A VARIABLEEEEE
+        
     }
 
     // Update is called once per frame
@@ -17,5 +17,4 @@ public class GroundBorders : MonoBehaviour
     {
         
     }
-
 }

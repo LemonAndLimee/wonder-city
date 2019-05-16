@@ -97,6 +97,10 @@ public class GroundPlacementController : MonoBehaviour
                     canPlace = false;
                 }
             }
+            else
+            {
+                canPlace = false;
+            }
 
 
         }
@@ -194,6 +198,10 @@ public class GroundPlacementController : MonoBehaviour
                     canFlatten = false;
                 }
             }
+            else
+            {
+                canFlatten = false;
+            }
 
 
         }
@@ -254,6 +262,10 @@ public class GroundPlacementController : MonoBehaviour
                 {
                     canPlace = false;
                 }
+            }
+            else
+            {
+                canPlace = false;
             }
 
 

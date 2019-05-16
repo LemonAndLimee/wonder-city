@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
-    public GameObject groundContainer;
+    public GameObject highwayGround;
+    public GameObject highwayRoad;
+    public GameObject highwayRoadHorizontal;
+    public GameObject highwayRoadJunction;
+
     public GameObject ground;
     public int rows;
     public int columns;
@@ -207,6 +211,7 @@ public class GameManagement : MonoBehaviour
         mouseRotatorScript.enabled = false;
 
         GroundBuild();
+        HighwayBuild();
     }
 
     void Update()
@@ -239,7 +244,7 @@ public class GameManagement : MonoBehaviour
     {
         for (int i = 0; i < worldScript.objects.Length; i++)
         {
-            int number = Random.Range(1, 5);
+            int number = Random.Range(1, 8);
             if (number == 3)
             {
                 number = Random.Range(1, 4);
@@ -342,6 +347,56 @@ public class GameManagement : MonoBehaviour
         }
 
         Camera.main.transform.position = new Vector3(columns/2, 8, -rows);
+
+
     }
+
+    public void HighwayBuild()
+    {
+        int median = (rows - 1) / 2;
+        GameObject zero = GameObject.Find("0");
+        Vector3 lastPos = new Vector3(zero.transform.position.x - (1), zero.transform.position.y, zero.transform.position.z + (1));
+        for (int i = 0; i < rows; i++)
+        {
+            Vector3 currentPos = new Vector3(lastPos.x, lastPos.y, lastPos.z - 1);
+            GameObject current = Instantiate(highwayGround);
+            current.transform.position = currentPos;
+            current.name = "HighwayGround" + i;
+
+            if (i == median)
+            {
+                GameObject currentRoad = Instantiate(highwayRoadHorizontal);
+                currentRoad.transform.position = new Vector3(currentPos.x, currentPos.y + 0.5030645f, currentPos.z);
+                currentRoad.name = "HighwayConnect";
+            }
+
+            lastPos = currentPos;
+        }
+
+        lastPos = new Vector3(zero.transform.position.x - (2), zero.transform.position.y, zero.transform.position.z + (1));
+        for (int i = 0; i < rows; i++)
+        {
+            Vector3 currentPos = new Vector3(lastPos.x, lastPos.y, lastPos.z - 1);
+            GameObject current = Instantiate(highwayGround);
+            current.transform.position = currentPos;
+            current.name = "HighwayGround" + (rows + i);
+
+            if (i == median)
+            {
+                GameObject currentRoad = Instantiate(highwayRoadJunction);
+                currentRoad.transform.position = new Vector3(currentPos.x, currentPos.y + 0.5030645f, currentPos.z);
+                currentRoad.name = "Highway" + (rows + i);
+            }
+            else
+            {
+                GameObject currentRoad = Instantiate(highwayRoad);
+                currentRoad.transform.position = new Vector3(currentPos.x, currentPos.y + 0.5030645f, currentPos.z);
+                currentRoad.name = "Highway" + (rows + i);
+            }
+
+            lastPos = currentPos;
+        }
+    }
+
 
 }

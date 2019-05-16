@@ -457,10 +457,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469f308daed5244b2b548743ba2eed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundContainer: {fileID: 0}
+  highwayGround: {fileID: 7324511241055836631, guid: 9530d82657c6e47b58b3dfb7a998a601,
+    type: 3}
+  highwayRoad: {fileID: 5396361793157556556, guid: ab463a91553af41019ab22beff4e11cd,
+    type: 3}
+  highwayRoadHorizontal: {fileID: 9203686327141548844, guid: 29cb065a4896e4469b3729d191d86e33,
+    type: 3}
+  highwayRoadJunction: {fileID: 3461036296231030964, guid: e91e4d9ea7510489baf7ca798bddd317,
+    type: 3}
   ground: {fileID: 3388101376390906313, guid: f130740211f5340228e082d231eb125d, type: 3}
-  rows: 20
-  columns: 20
+  rows: 25
+  columns: 25
   groundPos: {x: 0, y: 0, z: 0}
   lastGroundPos: {x: 0, y: 0, z: 0}
   groundCount: 0
@@ -1061,6 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldScript: {fileID: 149106291}
+  gameScript: {fileID: 149106289}
   empty: {fileID: 1890421765451691105, guid: 07b268ba8ac1f46028e5624d0aa1f280, type: 3}
   road: {fileID: 3952848265905372041, guid: 955ed2409a5584ccba7fe38e9acdf258, type: 3}
   roadVertical: {fileID: 6440409117338666215, guid: c622d60f3c15049278a1951421b0a233,
@@ -1093,6 +1101,7 @@ MonoBehaviour:
   bottomRoad: 0
   currentRoad: {fileID: 0}
   currentPos: {x: 0, y: 0, z: 0}
+  highwayConnect: {x: 0, y: 0, z: 0}
 --- !u!1 &154212254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4200,7 @@ MonoBehaviour:
   hoverObject: {fileID: 0}
   hoverName: 
   placeCalled: 0
+  placeRoadCalled: 0
   flattenCalled: 0
   houses: 0
   houseScript: {fileID: 0}

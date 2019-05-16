@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7841346278859336323}
   - component: {fileID: 1263550353881878709}
   - component: {fileID: 4806890226389167180}
+  - component: {fileID: -7899427632750653879}
   m_Layer: 0
   m_Name: cornerRoad
   m_TagString: Road
@@ -79,3 +80,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-7899427632750653879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523841458345810064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b826354c4494fad8bd0b27afeaa939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -48,5 +48,10 @@ public class CameraMovement : MonoBehaviour
             velocity.z = transform.right.z * speed;
             rb.velocity = velocity;
         }
+
+        if (gameObject.transform.position.y < 1)
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, 1, gameObject.transform.position.z);
+        }
     }
 }

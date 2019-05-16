@@ -7,6 +7,7 @@ public class HouseLogic : MonoBehaviour
 {
     public WorldSystem worldScript;
     public GroundPlacementController placementScript;
+    public GameManagement gameScript;
 
     public int houseNumber;
 
@@ -17,14 +18,17 @@ public class HouseLogic : MonoBehaviour
 
     public BoxCollider houseCollider;
 
+    public GameObject frontRoad;
+    public SpecificRoadLogic frontRoadScript;
+
 
     // Start is called before the first frame update
     void Start()
     {
         worldScript = GameObject.FindGameObjectWithTag("GameManager").GetComponent<WorldSystem>();
         placementScript = GameObject.Find("PlacementManager").GetComponent<GroundPlacementController>();
+        gameScript = GameObject.Find("GameManager").GetComponent<GameManagement>();
 
-        residents = capacity;
         specificResidentHappiness = 100;
 
         houseCollider = gameObject.GetComponent<BoxCollider>();
@@ -34,6 +38,8 @@ public class HouseLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        frontRoad = GameObject.Find("Road" + (houseNumber + gameScript.columns));
+
         worldScript.residents[houseNumber] = residents;
 
         if (placementScript.flattenCalled == true || placementScript.placeRoadCalled == true)
@@ -43,6 +49,19 @@ public class HouseLogic : MonoBehaviour
         else
         {
             houseCollider.enabled = true;
+        }
+
+        if (frontRoad != null)
+        {
+            frontRoadScript = frontRoad.GetComponent<SpecificRoadLogic>();
+            if (frontRoadScript.isHighwayConnected == true)
+            {
+                residents = capacity;
+            }
+            else
+            {
+                residents = 0;
+            }
         }
 
     }

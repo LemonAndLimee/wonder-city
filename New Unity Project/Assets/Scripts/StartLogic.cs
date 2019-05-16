@@ -31,6 +31,7 @@ public class StartLogic : MonoBehaviour
         canvas.SetActive(false);
         gameScript.LoadWorld();
         gameScript.gameStarted = true;
+        gameScript.HighwayBuild();
     }
 
     public void New()

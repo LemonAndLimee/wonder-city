@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7170606185653403341}
   - component: {fileID: 2222556010828645627}
   - component: {fileID: 5612773221126518786}
+  - component: {fileID: 8713298755532651598}
   m_Layer: 0
   m_Name: 3wayRoad
   m_TagString: Road
@@ -79,3 +80,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8713298755532651598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185770562090962142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b826354c4494fad8bd0b27afeaa939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
